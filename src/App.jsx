@@ -17,7 +17,7 @@ class App extends Component {
 	search() {
 		const BASE_URL = 'https://api.spotify.com/v1/search'
 		let FETCH_URL = `${BASE_URL}?q=${this.state.query}&type=artist&limit=1`
-		const accessToken = 'BQCreLVtdjdDXX7TIUDm0sI1xKCRPAGEtL9oCNGp7ADHdwHCTQhQ-S88FLOQeLPidZE_ZngWru--m1lxOthajJTvCkkaRRTZowoJCtIdAfeh3FXi-hJLB7KGUcXwbBYev7ClM8bQ8ZPh2eYRpIw7riQerDUi393A&refresh_token=AQCVBilenEIeTDtSGYJ5wdP439aTc09Z4bbGkJjErWGO94xKumlt8BiEf6g7YdYgKG5A9qY-Jp3a6ggi3HWXzcvvD32MPLHeX8VF0qjIHjGzHSpPSUJxCLERaN25oXiR5SA'
+		const accessToken = 'BQAJUQeM7izABYOfx3rqADQS8PQ8Y2vOCe4sc7USSVPek11WyPCWf8aLQnX_D6kSH22GL75zVCrwSWg0AKbQWcysqj8cSDhAfr0xiQY9WuRwr8im4lsPwvWxpin2Fz7c2jxZuvbsazIVG3oOPzqnUgpTkZOAkzIT&refresh_token=AQCoSKCA6suYcBfD1JJxUlX3lyIrEukeHihY__zPWqCgUWgPar9SIRufqV6ivTJ46qakZhSZg_7LsHSIacYr3g5m7u4Tt6jgiHdnYwlj3rpYSrEwEtOy8CykFdrx30a20pg'
 		const ALBUM_URL = 'https://api.spotify.com/v1/artists/'
 
 		let fetchOptions = {
@@ -41,7 +41,6 @@ class App extends Component {
 				fetch(FETCH_URL, fetchOptions)
 					.then(response => response.json())
 					.then(json => {
-						console.log('Artist\'s Top Tracks:', json)
 						const {tracks} = json
 						this.setState({tracks})
 					})
